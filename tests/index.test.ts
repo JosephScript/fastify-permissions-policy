@@ -2,12 +2,23 @@ import Fastify from 'fastify'
 import permissions from '../src/index'
 
 describe('Testing headers', () => {
+  test('throws', () => {
+    const fastify = Fastify()
+
+    try {
+      fastify.register(permissions, {
+        features: {},
+      })
+    } catch (ex) {
+      expect(ex.message).toBe('At least one feature is required.')
+    }
+  })
   test('sets sinlge and empty headers', (done) => {
     const fastify = Fastify()
 
     fastify.register(permissions, {
       features: {
-        'interest-cohort': [],
+        interestCohort: [],
       },
     })
     fastify.get('/', (request, reply) => {
@@ -33,7 +44,7 @@ describe('Testing headers', () => {
 
     fastify.register(permissions, {
       features: {
-        'interest-cohort': [],
+        interestCohort: [],
         fullscreen: ['self'],
         vibrate: ['none'],
         payment: ['self', '"example.com"'],
