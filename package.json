@@ -1,0 +1,46 @@
+{
+  "name": "fastify-permissions-policy",
+  "version": "1.0.0",
+  "description": "Fastify plugin for setting custom permissions policies. ",
+  "main": "dst/index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "build": "tsc --project tsconfig.json --pretty"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosephScript/fastify-permissions-policy.git"
+  },
+  "keywords": [
+    "permissions-policy",
+    "feature-policy",
+    "fastify",
+    "fastify-plugin",
+    "middleware"
+  ],
+  "author": "Joseph Szczesniak (JosephScript)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JosephScript/fastify-permissions-policy/issues"
+  },
+  "homepage": "https://github.com/JosephScript/fastify-permissions-policy#readme",
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --cache --fix"
+  },
+  "dependencies": {
+    "fastify-plugin": "^3.0.0",
+    "permissions-policy": "^0.6.0"
+  }, 
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.13.10",
+    "@types/node": "^15.0.0",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^6.0.0",
+    "prettier": "^2.3.2",
+    "fastify": "^3.0.0",
+    "typescript": "^4.3.0"
+  }
+}
