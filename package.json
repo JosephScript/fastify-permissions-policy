@@ -22,7 +22,7 @@
     "fastify-plugin",
     "middleware"
   ],
-  "author": "Joseph Szczesniak (JosephScript)",
+  "author": "Joseph Szczesniak <hi@josephscript.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JosephScript/fastify-permissions-policy/issues"
