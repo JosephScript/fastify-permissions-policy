@@ -11,21 +11,27 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
   plugins: ['prettier'],
-  extends: [
-    'eslint:recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:jsx-a11y/recommended',
-    'prettier',
-  ],
+  extends: ['eslint:recommended', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
-    'no-console': 'error',
-  }
+  },
+  overrides: [
+    {
+      files: ['**/*.ts'],
+      plugins: ['prettier'],
+      extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+      ],
+      rules: {
+        '@typescript-eslint/ban-ts-comment': 'warn',
+        '@typescript-eslint/ban-types': 'warn',
+        '@typescript-eslint/prefer-optional-chain': 'error',
+        'no-console': ['error', { allow: ['info', 'warn', 'error', 'debug'] }],
+        'prettier/prettier': 'error',
+      },
+    },
+  ],
 }
