@@ -10,7 +10,7 @@ To use:
 
 ```js
   import fastify from 'fastify'
-  import permissions from 'permissions-policy'
+  import permissions from 'fastify-permissions-policy'
 
   const fastify = Fastify()
   fastify.register(permissions, {
